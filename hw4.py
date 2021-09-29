@@ -72,9 +72,33 @@ class Cashier:
 
 ## Complete the Stall class here following the instructions in HW_4_instructions_rubric
 class Stall:
-    
-    pass
+    def __init__(self, name, inventory, cost=7, earnings=0):
+        self.name = name
+        self.inventory = inventory
+        self.cost = cost
+        self.earnings = earnings
 
+    def process_order(food_name, quantity):
+        if self.inventory[food_name] >= self.quantity:
+            self.inventory[food_name] = self.inventory[food_name] - self.quantity
+    
+    def has_item(self, food_name, quantity):
+        if self.inventory[self.food_name] >= self.quantity:
+            return True
+        else:
+            return False
+
+    def stock_up(self, food_name, quantity):
+        if self.food_name in self.inventory.keys():
+            self.inventory[self.food_name] += self.quantity
+        else:
+            self.inventory[self.food_name] = self.quantity
+
+    def compute_cost(self, quantity):
+        return self.quantity * self.cost
+    
+    def __str__(self):
+        return "Hello, we are " + self.name + ". This is our current menu: " + self.inventory.keys() + ". We charge $" + self.cost + " per item. We have $" + self.earnings + " in total."
 
 class TestAllMethods(unittest.TestCase):
     
